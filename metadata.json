@@ -1,0 +1,6 @@
+{
+  "name": "Metro Groundwater Risk Mitigation Simulation",
+  "description": "Interactive civil engineering simulation monitoring groundwater risk, water ingress, and drainage response during urban metro underground excavation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

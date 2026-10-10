@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  code, kbd, samp, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@keyframes waterDripAnim {
+  0% { transform: translateY(0) scale(0.7); opacity: 0; }
+  15% { opacity: 0.95; transform: translateY(6px) scale(1); }
+  85% { opacity: 0.9; transform: translateY(96px) scale(0.95); }
+  100% { opacity: 0; transform: translateY(115px) scale(1.4); }
+}
+
+@keyframes waterDripFastAnim {
+  0% { transform: translateY(0) scale(0.8); opacity: 0; }
+  15% { opacity: 1; transform: translateY(8px) scale(1.1); }
+  85% { opacity: 0.95; transform: translateY(98px) scale(1); }
+  100% { opacity: 0; transform: translateY(115px) scale(1.5); }
+}
+
+@keyframes flowDash {
+  0% { stroke-dashoffset: 40; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes pumpPulseAnim {
+  0%, 100% { filter: drop-shadow(0 0 3px rgba(6,182,212,0.4)); }
+  50% { filter: drop-shadow(0 0 12px rgba(6,182,212,0.9)); }
+}
+
+@keyframes waveOscillate {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(3px); }
+}
+
+.anim-water-drip {
+  animation: waterDripAnim 1.4s infinite ease-in;
+}
+
+.anim-water-drip-delayed {
+  animation: waterDripAnim 1.4s infinite ease-in 0.7s;
+}
+
+.anim-water-drip-fast {
+  animation: waterDripFastAnim 0.7s infinite ease-in;
+}
+
+.anim-water-drip-fast-delayed {
+  animation: waterDripFastAnim 0.7s infinite ease-in 0.35s;
+}
+
+.anim-flow {
+  stroke-dasharray: 6 4;
+  animation: flowDash 1.2s linear infinite;
+}
+
+.anim-pump-glow {
+  animation: pumpPulseAnim 1.2s infinite ease-in-out;
+}
+
+.anim-wave {
+  animation: waveOscillate 3s ease-in-out infinite;
+}
+
+/* Custom scrollbars for clean SCADA dashboard feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0ea5e9;
+}
